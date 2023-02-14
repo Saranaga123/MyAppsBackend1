@@ -32,6 +32,7 @@ app.get("/api/houserent",asyncHandler(
 ))
 app.post("/api/houserent/Create",asyncHandler(
     async(req,res,next)=>{
+        await HouserentModel.deleteMany(); 
         res.header('Access-Control-Allow-Origin', '*'); 
         const {id,name,accountNumber,bank}=req.body; 
         const newHouserent:Houserent = {  
