@@ -25,6 +25,7 @@ app.use (cors({
 
 app.get("/api/houserent",asyncHandler(
     async(req,res)=>{
+        res.header('Access-Control-Allow-Origin', '*'); 
         const users = await HouserentModel.find(); 
         res.send(users)
     }
