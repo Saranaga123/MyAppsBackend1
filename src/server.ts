@@ -20,7 +20,7 @@ app.use(bodyParser.json({
   }));
 app.use (cors({
     credentials:true,
-    origin:[ "http://localhost:4200"]
+    origin:[ "*"]
 }));
 
 app.get("/api/houserent",asyncHandler(
